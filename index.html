@@ -7,99 +7,44 @@
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --green-dark:#006D77;--green-mid:#00838F;--green-accent:#4DD9E3;--green-light:#E0F5F6;
-  --black:#0D0D0D;--gray-1:#1C1C1C;--gray-2:#4A4A4A;--gray-3:#8A8A8A;
-  --gray-4:#C8C8C8;--gray-5:#EBEBEB;--gray-6:#F7F7F7;--white:#FFFFFF;
-  --warning-bg:#FFF8EC;--warning:#9B6000;--success-bg:#E0F5F6;--success:#006D77;
-  --font:'Instrument Sans',sans-serif;--serif:'Space Grotesk',sans-serif;--radius:10px;
-}
+:root{--green-dark:#006D77;--green-mid:#00838F;--green-accent:#4DD9E3;--green-light:#E0F5F6;--black:#0D0D0D;--gray-1:#1C1C1C;--gray-2:#4A4A4A;--gray-3:#8A8A8A;--gray-4:#C8C8C8;--gray-5:#EBEBEB;--gray-6:#F7F7F7;--white:#FFFFFF;--warning-bg:#FFF8EC;--warning:#9B6000;--success-bg:#E0F5F6;--success:#006D77;--font:'Instrument Sans',sans-serif;--serif:'Space Grotesk',sans-serif;--radius:10px;}
 html{scroll-behavior:smooth}
 body{font-family:var(--font);background:var(--white);color:var(--black);line-height:1.5;font-size:15px}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,109,119,0.97);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:54px;}
-.nav-left{display:flex;align-items:center;gap:1.25rem}
-.nav-brand{font-size:13px;font-weight:600;color:#fff;text-decoration:none;letter-spacing:.03em}
-.nav-sep{width:1px;height:16px;background:rgba(255,255,255,0.2)}
-.nav-sub{font-size:12px;color:rgba(255,255,255,0.45)}
-.nav-links{display:flex;gap:1.75rem}
-.nav-links a{font-size:12px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color .15s}
-.nav-links a:hover{color:var(--green-accent)}
-.hero{background:var(--green-dark);padding:120px 2.5rem 72px;position:relative;overflow:hidden;}
-.hero-inner{max-width:1100px;margin:0 auto}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--green-accent);margin-bottom:1.75rem;}
-.hero-eyebrow::before{content:'';width:20px;height:1.5px;background:var(--green-accent)}
+.nav-left{display:flex;align-items:center;gap:1.25rem}.nav-brand{font-size:13px;font-weight:600;color:#fff;text-decoration:none;letter-spacing:.03em}.nav-sep{width:1px;height:16px;background:rgba(255,255,255,0.2)}.nav-sub{font-size:12px;color:rgba(255,255,255,0.45)}
+.nav-links{display:flex;gap:1.75rem}.nav-links a{font-size:12px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color .15s}.nav-links a:hover{color:var(--green-accent)}
+.hero{background:var(--green-dark);padding:120px 2.5rem 72px;position:relative;overflow:hidden;}.hero-inner{max-width:1100px;margin:0 auto}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--green-accent);margin-bottom:1.75rem;}.hero-eyebrow::before{content:'';width:20px;height:1.5px;background:var(--green-accent)}
 .hero h1{font-family:var(--serif);font-size:clamp(2rem,3.8vw,3.2rem);font-weight:700;line-height:1.08;color:#fff;max-width:620px;margin-bottom:1rem;letter-spacing:-.02em;text-transform:uppercase;}
 .hero-desc{font-size:14px;color:rgba(255,255,255,0.45);max-width:440px;line-height:1.7;margin-bottom:2.5rem}
-.search-wrap{display:flex;gap:10px;align-items:center;max-width:640px;}
-.search-box{flex:1;display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:100px;padding:0 18px;height:48px;transition:border-color .15s,background .15s;}
-.search-box:focus-within{background:rgba(255,255,255,0.1);border-color:rgba(77,217,227,0.5)}
-.search-box svg{width:16px;height:16px;stroke:rgba(255,255,255,0.35);fill:none;flex-shrink:0}
-.search-box input{flex:1;background:none;border:none;outline:none;font-family:var(--font);font-size:14px;color:#fff;}
-.search-box input::placeholder{color:rgba(255,255,255,0.3)}
-.filter-chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
-.chip{font-family:var(--font);font-size:12px;font-weight:500;padding:6px 14px;border-radius:100px;cursor:pointer;border:1px solid rgba(255,255,255,0.15);background:transparent;color:rgba(255,255,255,0.5);transition:all .15s;white-space:nowrap;}
-.chip:hover{border-color:rgba(77,217,227,0.4);color:rgba(255,255,255,0.8)}
-.chip.active{background:var(--green-accent);border-color:var(--green-accent);color:var(--green-dark);font-weight:600}
-.results-bar{max-width:1100px;margin:0 auto;padding:1.5rem 2.5rem .5rem;display:flex;align-items:center;justify-content:space-between;}
-.results-count{font-size:12px;color:var(--gray-3)}
-.results-count span{font-weight:600;color:var(--gray-1)}
-.page{max-width:1100px;margin:0 auto;padding:0 2.5rem 5rem}
-.section{padding:2.5rem 0 0}.section.hidden{display:none}
-.section-head{display:flex;align-items:baseline;justify-content:space-between;padding-bottom:.9rem;border-bottom:1px solid var(--gray-5);margin-bottom:1.5rem;}
-.section-head h2{font-size:12px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--gray-3)}
-.section-meta{font-size:12px;color:var(--gray-4)}
-.doc-table{width:100%;border-collapse:collapse}
-.doc-table thead tr{border-bottom:1px solid var(--gray-5)}
-.doc-table th{font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--gray-3);padding:0 12px 10px;text-align:left;}
-.doc-table th:first-child{padding-left:0}.doc-table th:last-child{padding-right:0;text-align:right}
-.doc-table tbody tr{border-bottom:1px solid var(--gray-6);transition:background .1s}
-.doc-table tbody tr:last-child{border-bottom:none}
-.doc-table tbody tr:hover{background:var(--gray-6)}
-.doc-table td{padding:13px 12px;vertical-align:middle}
-.doc-table td:first-child{padding-left:0}.doc-table td:last-child{padding-right:0;text-align:right}
-.td-code{font-size:11px;color:var(--gray-3);white-space:nowrap;min-width:110px;line-height:1.7}
-.td-title{font-size:14px;color:var(--black);font-weight:500}
-.td-sub{font-size:12px;color:var(--gray-3);margin-top:2px;font-style:italic}
-.td-rev{font-size:11px;color:var(--gray-3)}
-.badge{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:3px 9px;border-radius:100px;white-space:nowrap}
-.badge-active{background:var(--success-bg);color:var(--success)}
-.badge-review{background:var(--warning-bg);color:var(--warning)}
-.lang-row{display:flex;gap:4px;align-items:center}
-.lang{font-size:10px;font-weight:600;padding:2px 6px;border-radius:4px;letter-spacing:.04em}
-.lang-pt{background:#EEF3FF;color:#0057FF}.lang-en{background:#FFF0F0;color:#CC2222}
-tr.coming td{opacity:.45}tr.coming .td-title{font-style:italic}
-tr.doc-row.hidden{display:none}
-.empty-state{text-align:center;padding:4rem 2rem;color:var(--gray-3);display:none;}
-.empty-state.visible{display:block}
+.search-wrap{display:flex;gap:10px;align-items:center;max-width:640px;}.search-box{flex:1;display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:100px;padding:0 18px;height:48px;transition:border-color .15s,background .15s;}.search-box:focus-within{background:rgba(255,255,255,0.1);border-color:rgba(77,217,227,0.5)}.search-box svg{width:16px;height:16px;stroke:rgba(255,255,255,0.35);fill:none;flex-shrink:0}.search-box input{flex:1;background:none;border:none;outline:none;font-family:var(--font);font-size:14px;color:#fff;}.search-box input::placeholder{color:rgba(255,255,255,0.3)}
+.filter-chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}.chip{font-family:var(--font);font-size:12px;font-weight:500;padding:6px 14px;border-radius:100px;cursor:pointer;border:1px solid rgba(255,255,255,0.15);background:transparent;color:rgba(255,255,255,0.5);transition:all .15s;white-space:nowrap;}.chip:hover{border-color:rgba(77,217,227,0.4);color:rgba(255,255,255,0.8)}.chip.active{background:var(--green-accent);border-color:var(--green-accent);color:var(--green-dark);font-weight:600}
+.results-bar{max-width:1100px;margin:0 auto;padding:1.5rem 2.5rem .5rem;display:flex;align-items:center;justify-content:space-between;}.results-count{font-size:12px;color:var(--gray-3)}.results-count span{font-weight:600;color:var(--gray-1)}
+.hint{font-size:11px;color:var(--gray-4);font-style:italic}
+.page{max-width:1100px;margin:0 auto;padding:0 2.5rem 5rem}.section{padding:2.5rem 0 0}.section.hidden{display:none}
+.section-head{display:flex;align-items:baseline;justify-content:space-between;padding-bottom:.9rem;border-bottom:1px solid var(--gray-5);margin-bottom:1.5rem;}.section-head h2{font-size:12px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--gray-3)}.section-meta{font-size:12px;color:var(--gray-4)}
+.doc-table{width:100%;border-collapse:collapse}.doc-table thead tr{border-bottom:1px solid var(--gray-5)}.doc-table th{font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--gray-3);padding:0 12px 10px;text-align:left;}.doc-table th:first-child{padding-left:0}.doc-table th:last-child{padding-right:0;text-align:right}
+.doc-table tbody tr.doc-row{border-bottom:1px solid var(--gray-6);transition:background .1s}.doc-table tbody tr.doc-row:hover{background:var(--gray-6)}
+.doc-table tbody tr.desc-row{border-bottom:1px solid var(--gray-6)}
+.doc-table td{padding:13px 12px;vertical-align:middle}.doc-table td:first-child{padding-left:0}.doc-table td:last-child{padding-right:0;text-align:right}
+.clickable-row td:first-child::before{content:'▸';font-size:10px;color:var(--gray-4);margin-right:6px;display:inline-block;transition:transform .2s}
+.clickable-row.open td:first-child::before{content:'▾';color:var(--green-dark)}
+.td-code{font-size:11px;color:var(--gray-3);white-space:nowrap;min-width:110px;line-height:1.7}.td-title{font-size:14px;color:var(--black);font-weight:500}.td-sub{font-size:12px;color:var(--gray-3);margin-top:2px;font-style:italic}.td-rev{font-size:11px;color:var(--gray-3)}
+.badge{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:3px 9px;border-radius:100px;white-space:nowrap}.badge-active{background:var(--success-bg);color:var(--success)}.badge-review{background:var(--warning-bg);color:var(--warning)}
+.lang-row{display:flex;gap:4px;align-items:center}.lang{font-size:10px;font-weight:600;padding:2px 6px;border-radius:4px;letter-spacing:.04em}.lang-pt{background:#EEF3FF;color:#0057FF}.lang-en{background:#FFF0F0;color:#CC2222}
+tr.doc-row.hidden{display:none}tr.desc-row.hidden{display:none}
+.empty-state{text-align:center;padding:4rem 2rem;color:var(--gray-3);display:none;}.empty-state.visible{display:block}
 .survey{margin:3rem 0 0;border:1px solid var(--gray-5);border-radius:16px;padding:3rem;display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center;}
-.survey h2{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--black);margin-bottom:.75rem;text-transform:uppercase;letter-spacing:-.02em}
-.survey p{font-size:14px;color:var(--gray-2);line-height:1.7;max-width:400px}
-.survey-feats{display:flex;flex-direction:column;gap:10px;min-width:210px}
-.survey-feat{display:flex;align-items:center;gap:12px;padding:11px 14px;border:1px solid var(--gray-5);border-radius:var(--radius);background:var(--gray-6);}
-.feat-icon{width:30px;height:30px;border-radius:7px;background:var(--green-light);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.feat-icon svg{width:14px;height:14px;stroke:var(--green-mid);fill:none;stroke-width:1.75}
-.feat-label{font-size:12px;font-weight:500;color:var(--gray-1)}
-.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font);font-size:13px;font-weight:600;padding:11px 22px;border-radius:100px;cursor:pointer;border:1.5px solid var(--green-dark);background:var(--green-dark);color:#fff;transition:opacity .15s,transform .12s;letter-spacing:.01em;text-decoration:none;}
-.btn:hover{opacity:.85;transform:scale(1.015)}
-.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
-footer{border-top:1px solid var(--gray-5);padding:2rem 2.5rem;max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;}
-footer p{font-size:12px;color:var(--gray-3)}footer strong{color:var(--gray-1);font-weight:600}
+.survey h2{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--black);margin-bottom:.75rem;text-transform:uppercase;letter-spacing:-.02em}.survey p{font-size:14px;color:var(--gray-2);line-height:1.7;max-width:400px}
+.survey-feats{display:flex;flex-direction:column;gap:10px;min-width:210px}.survey-feat{display:flex;align-items:center;gap:12px;padding:11px 14px;border:1px solid var(--gray-5);border-radius:var(--radius);background:var(--gray-6);}.feat-icon{width:30px;height:30px;border-radius:7px;background:var(--green-light);display:flex;align-items:center;justify-content:center;flex-shrink:0}.feat-icon svg{width:14px;height:14px;stroke:var(--green-mid);fill:none;stroke-width:1.75}.feat-label{font-size:12px;font-weight:500;color:var(--gray-1)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font);font-size:13px;font-weight:600;padding:11px 22px;border-radius:100px;cursor:pointer;border:1.5px solid var(--green-dark);background:var(--green-dark);color:#fff;transition:opacity .15s,transform .12s;letter-spacing:.01em;text-decoration:none;}.btn:hover{opacity:.85;transform:scale(1.015)}.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+footer{border-top:1px solid var(--gray-5);padding:2rem 2.5rem;max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;}footer p{font-size:12px;color:var(--gray-3)}footer strong{color:var(--gray-1);font-weight:600}
 </style>
 </head>
 <body>
 <nav>
-  <div class="nav-left">
-    <a class="nav-brand" href="#">TECNORED</a>
-    <div class="nav-sep"></div>
-    <span class="nav-sub">Gestão de Qualidade — SGPT</span>
-  </div>
-  <div class="nav-links">
-    <a href="#sec-procedimentos">Procedimentos</a>
-    <a href="#sec-templates">Templates</a>
-    <a href="#sec-manuais">Manuais</a>
-    <a href="#sec-guias">Guias</a>
-    <a href="#avaliacao">Avaliação</a>
-  </div>
+  <div class="nav-left"><a class="nav-brand" href="#">TECNORED</a><div class="nav-sep"></div><span class="nav-sub">Gestão de Qualidade — SGPT</span></div>
+  <div class="nav-links"><a href="#sec-procedimentos">Procedimentos</a><a href="#sec-templates">Templates</a><a href="#sec-manuais">Manuais</a><a href="#sec-guias">Guias</a><a href="#avaliacao">Avaliação</a></div>
 </nav>
 
 <section class="hero">
@@ -108,12 +53,7 @@ footer p{font-size:12px;color:var(--gray-3)}footer strong{color:var(--gray-1);fo
     <div class="hero-eyebrow">SGPT</div>
     <h1>Gestão de Qualidade<br>Sistema de Padronização<br>de Engenharia</h1>
     <p class="hero-desc">Site de procedimentos, templates, guias e manuais revisados e padronizados pelo time de engenharia.</p>
-    <div class="search-wrap">
-      <div class="search-box">
-        <svg viewBox="0 0 24 24" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-        <input type="text" id="searchInput" placeholder="Buscar documento..." oninput="filterDocs()">
-      </div>
-    </div>
+    <div class="search-wrap"><div class="search-box"><svg viewBox="0 0 24 24" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="text" id="searchInput" placeholder="Buscar documento..." oninput="filterDocs()"></div></div>
     <div class="filter-chips">
       <button class="chip active" onclick="setFilter('todos',this)">Todos</button>
       <button class="chip" onclick="setFilter('procedimentos',this)">Procedimentos</button>
@@ -127,6 +67,8 @@ footer p{font-size:12px;color:var(--gray-3)}footer strong{color:var(--gray-1);fo
 
 <div class="results-bar">
   <span class="results-count"><span id="resultsNum">26</span> documentos encontrados</span>
+  <span class="hint">Clique em uma linha para ver a descrição</span>
+  <a href="https://tecnored365.sharepoint.com/:x:/r/sites/tecnoredfiles/engenharia/_layouts/15/Doc.aspx?sourcedoc=%7B134EFC72-999A-408D-8682-720B6730021A%7D&file=Lista_De_Documentos_SGPT.xls&action=default&mobileredirect=true" target="_blank" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:6px 14px;border:1px solid var(--green-accent);border-radius:100px;background:var(--green-light);transition:opacity .15s" onmouseover="this.style.opacity='.75'" onmouseout="this.style.opacity='1'"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Ver Lista Mestra completa</a>
 </div>
 
 <div class="page">
@@ -137,34 +79,42 @@ footer p{font-size:12px;color:var(--gray-3)}footer strong{color:var(--gray-1);fo
     <table class="doc-table">
       <thead><tr><th>Código</th><th>Título</th><th>Rev.</th><th>Idioma</th><th>Status</th><th></th></tr></thead>
       <tbody>
-        <tr class="doc-row" data-cat="procedimentos" data-status="ativo" data-text="pr-e-001 pr-e-002 formatacao documentos word formatting">
+        <tr class="doc-row clickable-row" data-cat="procedimentos" data-status="ativo" data-text="pr-e-001 pr-e-002 formatacao documentos word formatting" onclick="toggleDesc(this)" style="cursor:pointer">
           <td class="td-code">PR-E-001_PT<br>PR-E-002_EN</td>
           <td><div class="td-title">Formatação de Documentos Word</div><div class="td-sub">Formatting of Word Documents</div></td>
-          <td class="td-rev">0</td><td><div class="lang-row"><span class="lang lang-pt">PT</span><span class="lang lang-en">EN</span></div></td>
+          <td class="td-rev">0</td>
+          <td><div class="lang-row"><span class="lang lang-pt">PT</span><span class="lang lang-en">EN</span></div></td>
           <td><span class="badge badge-active">Ativo</span></td>
           <td><div style="display:flex;flex-direction:column;gap:4px;align-items:flex-end"><a href="https://tecnored365.sharepoint.com/sites/tecnoredfiles/engenharia/Documentos%20Compartilhados/Forms/AllItems.aspx?viewid=faddec46%2D381e%2D4caf%2D9fe6%2D83fbb08416e0&ga=1&id=%2Fsites%2Ftecnoredfiles%2Fengenharia%2FDocumentos%20Compartilhados%2F1%2E%20Gest%C3%A3o%20Engenharia%2F3%2E%20Normas%20e%20Governan%C3%A7a%2FQualidade%20Tecnored%20%2D%20Documentos%20Revisados%2FPR%2DE%2D001%5FPT%5FFormatacao%5FDocumentos%5FWord%5FRev%5F0%2Epdf&parent=%2Fsites%2Ftecnoredfiles%2Fengenharia%2FDocumentos%20Compartilhados%2F1%2E%20Gest%C3%A3o%20Engenharia%2F3%2E%20Normas%20e%20Governan%C3%A7a%2FQualidade%20Tecnored%20%2D%20Documentos%20Revisados" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:4px 10px;border:1px solid var(--gray-5);border-radius:100px;white-space:nowrap" onmouseover="this.style.background='var(--green-light)'" onmouseout="this.style.background=''">PT <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a><a href="https://tecnored365.sharepoint.com/sites/tecnoredfiles/engenharia/Documentos%20Compartilhados/Forms/AllItems.aspx?viewid=faddec46%2D381e%2D4caf%2D9fe6%2D83fbb08416e0&ga=1&id=%2Fsites%2Ftecnoredfiles%2Fengenharia%2FDocumentos%20Compartilhados%2F1%2E%20Gest%C3%A3o%20Engenharia%2F3%2E%20Normas%20e%20Governan%C3%A7a%2FQualidade%20Tecnored%20%2D%20Documentos%20Revisados%2FPR%2DE%2D002%5FEN%5FFormatting%5FOf%5F%20Word%5FDocuments%5FRev%5F0%2Epdf&parent=%2Fsites%2Ftecnoredfiles%2Fengenharia%2FDocumentos%20Compartilhados%2F1%2E%20Gest%C3%A3o%20Engenharia%2F3%2E%20Normas%20e%20Governan%C3%A7a%2FQualidade%20Tecnored%20%2D%20Documentos%20Revisados" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:4px 10px;border:1px solid var(--gray-5);border-radius:100px;white-space:nowrap" onmouseover="this.style.background='var(--green-light)'" onmouseout="this.style.background=''">EN <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></td>
         </tr>
-        <tr class="doc-row" data-cat="procedimentos" data-status="ativo" data-text="pr-e-003 pr-e-004 desenvolvimento desenho autocad 2d drawing">
+        <tr class="desc-row" style="display:none"><td colspan="5" style="padding:0 0 12px 0"><div style="background:var(--gray-6);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--gray-2);line-height:1.6;border-left:3px solid var(--green-accent)"><span style="display:inline-block;margin-right:1rem"><strong style="font-size:10px;color:var(--green-dark);text-transform:uppercase;letter-spacing:.05em">PR-E-001_PT</strong> — Estabelece o padrão de formatação para documentos elaborados em Microsoft Word.</span><span style="display:inline-block;margin-right:1rem"><strong style="font-size:10px;color:var(--green-dark);text-transform:uppercase;letter-spacing:.05em">PR-E-002_EN</strong> — Defines the standard formatting requirements for documents developed in Microsoft Word.</span></div></td></tr>
+        <tr class="doc-row clickable-row" data-cat="procedimentos" data-status="ativo" data-text="pr-e-003 pr-e-004 desenho autocad 2d drawing development" onclick="toggleDesc(this)" style="cursor:pointer">
           <td class="td-code">PR-E-003_PT<br>PR-E-004_EN</td>
           <td><div class="td-title">Desenvolvimento de Desenho Autocad 2D</div><div class="td-sub">Drawing Development Autocad 2D</div></td>
-          <td class="td-rev">1</td><td><div class="lang-row"><span class="lang lang-pt">PT</span><span class="lang lang-en">EN</span></div></td>
+          <td class="td-rev">1</td>
+          <td><div class="lang-row"><span class="lang lang-pt">PT</span><span class="lang lang-en">EN</span></div></td>
           <td><span class="badge badge-active">Ativo</span></td>
           <td><div style="display:flex;flex-direction:column;gap:4px;align-items:flex-end"><a href="https://tecnored365.sharepoint.com/sites/tecnoredfiles/engenharia/Documentos%20Compartilhados/Forms/AllItems.aspx?viewid=faddec46%2D381e%2D4caf%2D9fe6%2D83fbb08416e0&ga=1&id=%2Fsites%2Ftecnoredfiles%2Fengenharia%2FDocumentos%20Compartilhados%2F1%2E%20Gest%C3%A3o%20Engenharia%2F3%2E%20Normas%20e%20Governan%C3%A7a%2FQualidade%20Tecnored%20%2D%20Documentos%20Revisados%2FPR%2DE%2D003%5FPT%5FDesenvolvimento%5FDesenho%5FAutocad%5F2D%5FRev%5F01%20%281%29%2Epdf&parent=%2Fsites%2Ftecnoredfiles%2Fengenharia%2FDocumentos%20Compartilhados%2F1%2E%20Gest%C3%A3o%20Engenharia%2F3%2E%20Normas%20e%20Governan%C3%A7a%2FQualidade%20Tecnored%20%2D%20Documentos%20Revisados" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:4px 10px;border:1px solid var(--gray-5);border-radius:100px;white-space:nowrap" onmouseover="this.style.background='var(--green-light)'" onmouseout="this.style.background=''">PT <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a><a href="https://tecnored365.sharepoint.com/sites/tecnoredfiles/engenharia/Documentos%20Compartilhados/Forms/AllItems.aspx?viewid=faddec46%2D381e%2D4caf%2D9fe6%2D83fbb08416e0&ga=1&id=%2Fsites%2Ftecnoredfiles%2Fengenharia%2FDocumentos%20Compartilhados%2F1%2E%20Gest%C3%A3o%20Engenharia%2F3%2E%20Normas%20e%20Governan%C3%A7a%2FQualidade%20Tecnored%20%2D%20Documentos%20Revisados%2FPR%2DE%2D004%5FEN%5FDrawing%5FDevelopment%5FAutocad%5F2D%5FRev%5F01%20%281%29%2Epdf&parent=%2Fsites%2Ftecnoredfiles%2Fengenharia%2FDocumentos%20Compartilhados%2F1%2E%20Gest%C3%A3o%20Engenharia%2F3%2E%20Normas%20e%20Governan%C3%A7a%2FQualidade%20Tecnored%20%2D%20Documentos%20Revisados" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:4px 10px;border:1px solid var(--gray-5);border-radius:100px;white-space:nowrap" onmouseover="this.style.background='var(--green-light)'" onmouseout="this.style.background=''">EN <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></td>
         </tr>
-        <tr class="doc-row" data-cat="procedimentos" data-status="ativo" data-text="pr-e-005 pr-e-006 elaboracao documento tecnico microsoft excel technical">
+        <tr class="desc-row" style="display:none"><td colspan="5" style="padding:0 0 12px 0"><div style="background:var(--gray-6);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--gray-2);line-height:1.6;border-left:3px solid var(--green-accent)"><span style="display:inline-block;margin-right:1rem"><strong style="font-size:10px;color:var(--green-dark);text-transform:uppercase;letter-spacing:.05em">PR-E-003_PT</strong> — Orienta a elaboração e padronização de desenhos técnicos em AutoCAD 2D.</span><span style="display:inline-block;margin-right:1rem"><strong style="font-size:10px;color:var(--green-dark);text-transform:uppercase;letter-spacing:.05em">PR-E-004_EN</strong> — Provides guidelines for the development and standardization of technical drawings in AutoCAD 2D.</span></div></td></tr>
+        <tr class="doc-row clickable-row" data-cat="procedimentos" data-status="ativo" data-text="pr-e-005 pr-e-006 documento tecnico microsoft excel technical" onclick="toggleDesc(this)" style="cursor:pointer">
           <td class="td-code">PR-E-005_PT<br>PR-E-006_EN</td>
           <td><div class="td-title">Elaboração de Doc. Técnico Microsoft Excel</div><div class="td-sub">Technical Document Preparation Microsoft Excel</div></td>
-          <td class="td-rev">1</td><td><div class="lang-row"><span class="lang lang-pt">PT</span><span class="lang lang-en">EN</span></div></td>
+          <td class="td-rev">1</td>
+          <td><div class="lang-row"><span class="lang lang-pt">PT</span><span class="lang lang-en">EN</span></div></td>
           <td><span class="badge badge-active">Ativo</span></td>
           <td><div style="display:flex;flex-direction:column;gap:4px;align-items:flex-end"><a href="https://tecnored365.sharepoint.com/sites/tecnoredfiles/engenharia/Documentos%20Compartilhados/Forms/AllItems.aspx?viewid=faddec46%2D381e%2D4caf%2D9fe6%2D83fbb08416e0&ga=1&id=%2Fsites%2Ftecnoredfiles%2Fengenharia%2FDocumentos%20Compartilhados%2F1%2E%20Gest%C3%A3o%20Engenharia%2F3%2E%20Normas%20e%20Governan%C3%A7a%2FQualidade%20Tecnored%20%2D%20Documentos%20Revisados%2FPR%2DE%2D005%5FPT%5FElaboracao%5FDoc%5FTecnico%5FMicrosoft%5FExcel%5FRev%5F01%20%281%29%2Epdf&parent=%2Fsites%2Ftecnoredfiles%2Fengenharia%2FDocumentos%20Compartilhados%2F1%2E%20Gest%C3%A3o%20Engenharia%2F3%2E%20Normas%20e%20Governan%C3%A7a%2FQualidade%20Tecnored%20%2D%20Documentos%20Revisados" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:4px 10px;border:1px solid var(--gray-5);border-radius:100px;white-space:nowrap" onmouseover="this.style.background='var(--green-light)'" onmouseout="this.style.background=''">PT <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a><a href="https://tecnored365.sharepoint.com/sites/tecnoredfiles/engenharia/Documentos%20Compartilhados/Forms/AllItems.aspx?viewid=faddec46%2D381e%2D4caf%2D9fe6%2D83fbb08416e0&ga=1&id=%2Fsites%2Ftecnoredfiles%2Fengenharia%2FDocumentos%20Compartilhados%2F1%2E%20Gest%C3%A3o%20Engenharia%2F3%2E%20Normas%20e%20Governan%C3%A7a%2FQualidade%20Tecnored%20%2D%20Documentos%20Revisados%2FPR%2DE%2D006%5FEN%5FPreparation%5Fof%5FTechnical%5FDocument%5FMicrosoft%5FExcel%5FRev%5F01%20%281%29%2Epdf&parent=%2Fsites%2Ftecnoredfiles%2Fengenharia%2FDocumentos%20Compartilhados%2F1%2E%20Gest%C3%A3o%20Engenharia%2F3%2E%20Normas%20e%20Governan%C3%A7a%2FQualidade%20Tecnored%20%2D%20Documentos%20Revisados" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:4px 10px;border:1px solid var(--gray-5);border-radius:100px;white-space:nowrap" onmouseover="this.style.background='var(--green-light)'" onmouseout="this.style.background=''">EN <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></td>
         </tr>
-        <tr class="doc-row" data-cat="procedimentos" data-status="ativo" data-text="pr-e-007 pr-e-008 elaboracao apresentacoes power point powerpoint presentation">
+        <tr class="desc-row" style="display:none"><td colspan="5" style="padding:0 0 12px 0"><div style="background:var(--gray-6);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--gray-2);line-height:1.6;border-left:3px solid var(--green-accent)"><span style="display:inline-block;margin-right:1rem"><strong style="font-size:10px;color:var(--green-dark);text-transform:uppercase;letter-spacing:.05em">PR-E-005_PT</strong> — Define os critérios para elaboração e padronização de documentos técnicos em Microsoft Excel.</span><span style="display:inline-block;margin-right:1rem"><strong style="font-size:10px;color:var(--green-dark);text-transform:uppercase;letter-spacing:.05em">PR-E-006_EN</strong> — Defines the requirements for preparing and standardizing technical documents in Microsoft Excel.</span></div></td></tr>
+        <tr class="doc-row clickable-row" data-cat="procedimentos" data-status="ativo" data-text="pr-e-007 pr-e-008 apresentacoes powerpoint presentation development" onclick="toggleDesc(this)" style="cursor:pointer">
           <td class="td-code">PR-E-007_PT<br>PR-E-008_EN</td>
           <td><div class="td-title">Elaboração de Apresentações Power Point</div><div class="td-sub">PowerPoint Presentation Development</div></td>
-          <td class="td-rev">0</td><td><div class="lang-row"><span class="lang lang-pt">PT</span><span class="lang lang-en">EN</span></div></td>
+          <td class="td-rev">0</td>
+          <td><div class="lang-row"><span class="lang lang-pt">PT</span><span class="lang lang-en">EN</span></div></td>
           <td><span class="badge badge-active">Ativo</span></td>
           <td><div style="display:flex;flex-direction:column;gap:4px;align-items:flex-end"><a href="https://tecnored365.sharepoint.com/sites/tecnoredfiles/engenharia/Documentos%20Compartilhados/Forms/AllItems.aspx?viewid=faddec46%2D381e%2D4caf%2D9fe6%2D83fbb08416e0&ga=1&id=%2Fsites%2Ftecnoredfiles%2Fengenharia%2FDocumentos%20Compartilhados%2F1%2E%20Gest%C3%A3o%20Engenharia%2F3%2E%20Normas%20e%20Governan%C3%A7a%2FQualidade%20Tecnored%20%2D%20Documentos%20Revisados%2FPR%2DE%2D007%5FPT%5FElabora%C3%A7%C3%A3o%5FApresenta%C3%A7%C3%B5es%5FPowerPoint%5FRev%5F0%20%282%29%2Epdf&parent=%2Fsites%2Ftecnoredfiles%2Fengenharia%2FDocumentos%20Compartilhados%2F1%2E%20Gest%C3%A3o%20Engenharia%2F3%2E%20Normas%20e%20Governan%C3%A7a%2FQualidade%20Tecnored%20%2D%20Documentos%20Revisados" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:4px 10px;border:1px solid var(--gray-5);border-radius:100px;white-space:nowrap" onmouseover="this.style.background='var(--green-light)'" onmouseout="this.style.background=''">PT <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a><a href="https://tecnored365.sharepoint.com/sites/tecnoredfiles/engenharia/Documentos%20Compartilhados/Forms/AllItems.aspx?viewid=faddec46%2D381e%2D4caf%2D9fe6%2D83fbb08416e0&ga=1&id=%2Fsites%2Ftecnoredfiles%2Fengenharia%2FDocumentos%20Compartilhados%2F1%2E%20Gest%C3%A3o%20Engenharia%2F3%2E%20Normas%20e%20Governan%C3%A7a%2FQualidade%20Tecnored%20%2D%20Documentos%20Revisados%2FPR%2DE%2D008%5FEN%5FPowerPoint%5FPresentation%5FDevelopment%5FRev%5F0%20%281%29%2Epdf&parent=%2Fsites%2Ftecnoredfiles%2Fengenharia%2FDocumentos%20Compartilhados%2F1%2E%20Gest%C3%A3o%20Engenharia%2F3%2E%20Normas%20e%20Governan%C3%A7a%2FQualidade%20Tecnored%20%2D%20Documentos%20Revisados" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:4px 10px;border:1px solid var(--gray-5);border-radius:100px;white-space:nowrap" onmouseover="this.style.background='var(--green-light)'" onmouseout="this.style.background=''">EN <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></td>
         </tr>
+        <tr class="desc-row" style="display:none"><td colspan="5" style="padding:0 0 12px 0"><div style="background:var(--gray-6);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--gray-2);line-height:1.6;border-left:3px solid var(--green-accent)"><span style="display:inline-block;margin-right:1rem"><strong style="font-size:10px;color:var(--green-dark);text-transform:uppercase;letter-spacing:.05em">PR-E-007_PT</strong> — Estabelece diretrizes para criação e padronização de apresentações corporativas em PowerPoint.</span><span style="display:inline-block;margin-right:1rem"><strong style="font-size:10px;color:var(--green-dark);text-transform:uppercase;letter-spacing:.05em">PR-E-008_EN</strong> — Establishes guidelines for creating and standardizing corporate PowerPoint presentations.</span></div></td></tr>
       </tbody>
     </table>
   </section>
@@ -174,62 +124,78 @@ footer p{font-size:12px;color:var(--gray-3)}footer strong{color:var(--gray-1);fo
     <table class="doc-table">
       <thead><tr><th>Código</th><th>Título</th><th>Rev.</th><th>Idioma</th><th>Status</th><th></th></tr></thead>
       <tbody>
-        <tr class="doc-row" data-cat="templates" data-status="ativo" data-text="pr-e-009 pr-e-010 template documento word">
+        <tr class="doc-row clickable-row" data-cat="templates" data-status="ativo" data-text="pr-e-009 pr-e-010 template documento word" onclick="toggleDesc(this)" style="cursor:pointer">
           <td class="td-code">PR-E-009_PT<br>PR-E-010_EN</td>
           <td><div class="td-title">Template — Documento Word</div><div class="td-sub">Word Document Template</div></td>
-          <td class="td-rev">0</td><td><div class="lang-row"><span class="lang lang-pt">PT</span><span class="lang lang-en">EN</span></div></td>
+          <td class="td-rev">0</td>
+          <td><div class="lang-row"><span class="lang lang-pt">PT</span><span class="lang lang-en">EN</span></div></td>
           <td><span class="badge badge-active">Ativo</span></td>
           <td><div style="display:flex;flex-direction:column;gap:4px;align-items:flex-end"><a href="https://tecnored365.sharepoint.com/:w:/r/sites/tecnoredfiles/engenharia/_layouts/15/Doc.aspx?sourcedoc=%7BD76A82DD-29D5-4D15-B435-5543B78F812C%7D&file=PR-E-009_PT_Modelo_De_Documentos_T%C3%A9cnicos_Em_Word.doc&action=default&mobileredirect=true" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:4px 10px;border:1px solid var(--gray-5);border-radius:100px;white-space:nowrap" onmouseover="this.style.background='var(--green-light)'" onmouseout="this.style.background=''">PT <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a><a href="https://tecnored365.sharepoint.com/:w:/r/sites/tecnoredfiles/engenharia/_layouts/15/Doc.aspx?sourcedoc=%7B6C1CBB5A-1662-48FD-9CE6-829B1C956E3B%7D&file=PR-E-010_EN_Template_Word_Technical_Documents.doc&action=default&mobileredirect=true" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:4px 10px;border:1px solid var(--gray-5);border-radius:100px;white-space:nowrap" onmouseover="this.style.background='var(--green-light)'" onmouseout="this.style.background=''">EN <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></td>
         </tr>
-        <tr class="doc-row" data-cat="templates" data-status="ativo" data-text="pr-e-011 pr-e-012 template documento excel">
+        <tr class="desc-row" style="display:none"><td colspan="5" style="padding:0 0 12px 0"><div style="background:var(--gray-6);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--gray-2);line-height:1.6;border-left:3px solid var(--green-accent)"><span style="display:inline-block;margin-right:1rem"><strong style="font-size:10px;color:var(--green-dark);text-transform:uppercase;letter-spacing:.05em">PR-E-009_PT</strong> — Modelo padrão para elaboração de documentos em Microsoft Word.</span><span style="display:inline-block;margin-right:1rem"><strong style="font-size:10px;color:var(--green-dark);text-transform:uppercase;letter-spacing:.05em">PR-E-010_EN</strong> — Standard template for developing technical documents in Microsoft Word.</span></div></td></tr>
+        <tr class="doc-row clickable-row" data-cat="templates" data-status="ativo" data-text="pr-e-011 pr-e-012 template documento excel" onclick="toggleDesc(this)" style="cursor:pointer">
           <td class="td-code">PR-E-011_PT<br>PR-E-012_EN</td>
           <td><div class="td-title">Template — Documento Excel</div><div class="td-sub">Excel Document Template</div></td>
-          <td class="td-rev">0</td><td><div class="lang-row"><span class="lang lang-pt">PT</span><span class="lang lang-en">EN</span></div></td>
+          <td class="td-rev">0</td>
+          <td><div class="lang-row"><span class="lang lang-pt">PT</span><span class="lang lang-en">EN</span></div></td>
           <td><span class="badge badge-active">Ativo</span></td>
           <td><div style="display:flex;flex-direction:column;gap:4px;align-items:flex-end"><a href="https://tecnored365.sharepoint.com/:x:/r/sites/tecnoredfiles/engenharia/_layouts/15/Doc.aspx?sourcedoc=%7BE0A41493-09CC-489B-8F23-25DFA2A5DDEF%7D&file=PR-E-011_PT_Modelo_De_Elabora%C3%A7%C3%A3o_Microsoft_Excel.xlsx&action=default&mobileredirect=true" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:4px 10px;border:1px solid var(--gray-5);border-radius:100px;white-space:nowrap" onmouseover="this.style.background='var(--green-light)'" onmouseout="this.style.background=''">PT <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a><a href="https://tecnored365.sharepoint.com/:x:/r/sites/tecnoredfiles/engenharia/_layouts/15/Doc.aspx?sourcedoc=%7BAB84C170-5732-4094-ACFA-07FD4A018394%7D&file=PR-E-012_EN_Template_For_Elaboration_Of_Microsoft_Excel.xlsx&action=default&mobileredirect=true" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:4px 10px;border:1px solid var(--gray-5);border-radius:100px;white-space:nowrap" onmouseover="this.style.background='var(--green-light)'" onmouseout="this.style.background=''">EN <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></td>
         </tr>
-        <tr class="doc-row" data-cat="templates" data-status="ativo" data-text="pr-e-013 pr-e-014 template documento power point powerpoint">
+        <tr class="desc-row" style="display:none"><td colspan="5" style="padding:0 0 12px 0"><div style="background:var(--gray-6);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--gray-2);line-height:1.6;border-left:3px solid var(--green-accent)"><span style="display:inline-block;margin-right:1rem"><strong style="font-size:10px;color:var(--green-dark);text-transform:uppercase;letter-spacing:.05em">PR-E-011_PT</strong> — Modelo padrão para elaboração de documentos técnicos em Microsoft Excel.</span><span style="display:inline-block;margin-right:1rem"><strong style="font-size:10px;color:var(--green-dark);text-transform:uppercase;letter-spacing:.05em">PR-E-012_EN</strong> — Standard template for developing technical documents in Microsoft Excel.</span></div></td></tr>
+        <tr class="doc-row clickable-row" data-cat="templates" data-status="ativo" data-text="pr-e-013 pr-e-014 template documento powerpoint" onclick="toggleDesc(this)" style="cursor:pointer">
           <td class="td-code">PR-E-013_PT<br>PR-E-014_EN</td>
           <td><div class="td-title">Template — Documento Power Point</div><div class="td-sub">Power Point Document Template</div></td>
-          <td class="td-rev">0</td><td><div class="lang-row"><span class="lang lang-pt">PT</span><span class="lang lang-en">EN</span></div></td>
+          <td class="td-rev">0</td>
+          <td><div class="lang-row"><span class="lang lang-pt">PT</span><span class="lang lang-en">EN</span></div></td>
           <td><span class="badge badge-active">Ativo</span></td>
           <td><div style="display:flex;flex-direction:column;gap:4px;align-items:flex-end"><a href="https://tecnored365.sharepoint.com/:p:/r/sites/tecnoredfiles/engenharia/_layouts/15/Doc.aspx?sourcedoc=%7BE2363497-0567-4CF0-BFD4-A986F20FC46B%7D&file=PR-E-013_PT_Modelo_Padr%C3%A3o_PPT_Tecnored.pptx&action=edit&mobileredirect=true" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:4px 10px;border:1px solid var(--gray-5);border-radius:100px;white-space:nowrap" onmouseover="this.style.background='var(--green-light)'" onmouseout="this.style.background=''">PT <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a><a href="https://tecnored365.sharepoint.com/:p:/r/sites/tecnoredfiles/engenharia/_layouts/15/Doc.aspx?sourcedoc=%7B02591A27-AA3F-4B28-BDDF-FFEFAAA6F2BD%7D&file=PR-E-014_EN_Standard_PPT_Template_Tecnored.pptx&action=edit&mobileredirect=true" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:4px 10px;border:1px solid var(--gray-5);border-radius:100px;white-space:nowrap" onmouseover="this.style.background='var(--green-light)'" onmouseout="this.style.background=''">EN <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></td>
         </tr>
-        <tr class="doc-row" data-cat="templates" data-status="ativo" data-text="pe-g-001 pe-g-002 template eap">
+        <tr class="desc-row" style="display:none"><td colspan="5" style="padding:0 0 12px 0"><div style="background:var(--gray-6);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--gray-2);line-height:1.6;border-left:3px solid var(--green-accent)"><span style="display:inline-block;margin-right:1rem"><strong style="font-size:10px;color:var(--green-dark);text-transform:uppercase;letter-spacing:.05em">PR-E-013_PT</strong> — Modelo padrão para elaboração de apresentações corporativas em PowerPoint.</span><span style="display:inline-block;margin-right:1rem"><strong style="font-size:10px;color:var(--green-dark);text-transform:uppercase;letter-spacing:.05em">PR-E-014_EN</strong> — Standard template for developing corporate presentations in PowerPoint.</span></div></td></tr>
+        <tr class="doc-row clickable-row" data-cat="templates" data-status="ativo" data-text="pe-g-001 pe-g-002 template eap wbs" onclick="toggleDesc(this)" style="cursor:pointer">
           <td class="td-code">PE-G-001_PT<br>PE-G-002_EN</td>
           <td><div class="td-title">Template EAP</div></td>
-          <td class="td-rev">0</td><td><div class="lang-row"><span class="lang lang-pt">PT</span><span class="lang lang-en">EN</span></div></td>
+          <td class="td-rev">0</td>
+          <td><div class="lang-row"><span class="lang lang-pt">PT</span><span class="lang lang-en">EN</span></div></td>
           <td><span class="badge badge-active">Ativo</span></td>
           <td><div style="display:flex;flex-direction:column;gap:4px;align-items:flex-end"><a href="https://tecnored365.sharepoint.com/:x:/r/sites/tecnoredfiles/engenharia/_layouts/15/Doc.aspx?sourcedoc=%7B75A8B54E-3B81-4BCE-9242-231B7CB087EA%7D&file=PE-G-001_PT_Template_EAP.xlsx&action=default&mobileredirect=true" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:4px 10px;border:1px solid var(--gray-5);border-radius:100px;white-space:nowrap" onmouseover="this.style.background='var(--green-light)'" onmouseout="this.style.background=''">PT <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a><a href="https://tecnored365.sharepoint.com/:x:/r/sites/tecnoredfiles/engenharia/_layouts/15/Doc.aspx?sourcedoc=%7B3044140A-1A1C-4083-B82E-B066A7976A89%7D&file=PE-G-002_EN_Template_EAP.xlsx&action=default&mobileredirect=true" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:4px 10px;border:1px solid var(--gray-5);border-radius:100px;white-space:nowrap" onmouseover="this.style.background='var(--green-light)'" onmouseout="this.style.background=''">EN <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></td>
         </tr>
-        <tr class="doc-row" data-cat="templates" data-status="ativo" data-text="pe-g-003 pe-g-004 template ld">
+        <tr class="desc-row" style="display:none"><td colspan="5" style="padding:0 0 12px 0"><div style="background:var(--gray-6);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--gray-2);line-height:1.6;border-left:3px solid var(--green-accent)"><span style="display:inline-block;margin-right:1rem"><strong style="font-size:10px;color:var(--green-dark);text-transform:uppercase;letter-spacing:.05em">PE-G-001_PT</strong> — Modelo padrão para elaboração da Estrutura Analítica do Projeto (EAP).</span><span style="display:inline-block;margin-right:1rem"><strong style="font-size:10px;color:var(--green-dark);text-transform:uppercase;letter-spacing:.05em">PE-G-002_EN</strong> — Standard template for developing the Work Breakdown Structure (WBS).</span></div></td></tr>
+        <tr class="doc-row clickable-row" data-cat="templates" data-status="ativo" data-text="pe-g-003 pe-g-004 template ld lista documentos" onclick="toggleDesc(this)" style="cursor:pointer">
           <td class="td-code">PE-G-003_PT<br>PE-G-004_EN</td>
           <td><div class="td-title">Template LD</div></td>
-          <td class="td-rev">0</td><td><div class="lang-row"><span class="lang lang-pt">PT</span><span class="lang lang-en">EN</span></div></td>
+          <td class="td-rev">0</td>
+          <td><div class="lang-row"><span class="lang lang-pt">PT</span><span class="lang lang-en">EN</span></div></td>
           <td><span class="badge badge-active">Ativo</span></td>
           <td><div style="display:flex;flex-direction:column;gap:4px;align-items:flex-end"><a href="https://tecnored365.sharepoint.com/:x:/r/sites/tecnoredfiles/engenharia/_layouts/15/Doc.aspx?sourcedoc=%7B7A1ADF05-6DAF-428C-BE74-D0F8C6526C0D%7D&file=PE-G-003_PT_Template_LD.xlsx&action=default&mobileredirect=true" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:4px 10px;border:1px solid var(--gray-5);border-radius:100px;white-space:nowrap" onmouseover="this.style.background='var(--green-light)'" onmouseout="this.style.background=''">PT <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a><a href="https://tecnored365.sharepoint.com/:x:/r/sites/tecnoredfiles/engenharia/_layouts/15/Doc.aspx?sourcedoc=%7BD9C3F86F-699E-478B-9F6B-173908FAF49C%7D&file=PE-G-004_EN_Template_LD.xlsx&action=default&mobileredirect=true" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:4px 10px;border:1px solid var(--gray-5);border-radius:100px;white-space:nowrap" onmouseover="this.style.background='var(--green-light)'" onmouseout="this.style.background=''">EN <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></td>
         </tr>
-        <tr class="doc-row" data-cat="templates" data-status="ativo" data-text="pe-g-005 pe-g-006 template grd">
+        <tr class="desc-row" style="display:none"><td colspan="5" style="padding:0 0 12px 0"><div style="background:var(--gray-6);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--gray-2);line-height:1.6;border-left:3px solid var(--green-accent)"><span style="display:inline-block;margin-right:1rem"><strong style="font-size:10px;color:var(--green-dark);text-transform:uppercase;letter-spacing:.05em">PE-G-003_PT</strong> — Modelo padrão para elaboração da Lista de Documentos (LD) do projeto.</span><span style="display:inline-block;margin-right:1rem"><strong style="font-size:10px;color:var(--green-dark);text-transform:uppercase;letter-spacing:.05em">PE-G-004_EN</strong> — Standard template for preparing the project's Document List (DL).</span></div></td></tr>
+        <tr class="doc-row clickable-row" data-cat="templates" data-status="ativo" data-text="pe-g-005 pe-g-006 template grd grade responsabilidades" onclick="toggleDesc(this)" style="cursor:pointer">
           <td class="td-code">PE-G-005_PT<br>PE-G-006_EN</td>
           <td><div class="td-title">Template GRD</div></td>
-          <td class="td-rev">0</td><td><div class="lang-row"><span class="lang lang-pt">PT</span><span class="lang lang-en">EN</span></div></td>
+          <td class="td-rev">0</td>
+          <td><div class="lang-row"><span class="lang lang-pt">PT</span><span class="lang lang-en">EN</span></div></td>
           <td><span class="badge badge-active">Ativo</span></td>
           <td><div style="display:flex;flex-direction:column;gap:4px;align-items:flex-end"><a href="https://tecnored365.sharepoint.com/:x:/r/sites/tecnoredfiles/engenharia/_layouts/15/Doc.aspx?sourcedoc=%7BAF9C9E86-883C-4DF7-A2C5-3BE569B82CE5%7D&file=PE-G-005_PT_Template_GRD.xlsx&action=default&mobileredirect=true" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:4px 10px;border:1px solid var(--gray-5);border-radius:100px;white-space:nowrap" onmouseover="this.style.background='var(--green-light)'" onmouseout="this.style.background=''">PT <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a><a href="https://tecnored365.sharepoint.com/:x:/r/sites/tecnoredfiles/engenharia/_layouts/15/Doc.aspx?sourcedoc=%7BE59D8BB7-A162-41DB-8B61-DB890192BFD8%7D&file=PE-G-006_EN_Template_GRD.xlsx&action=default&mobileredirect=true" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:4px 10px;border:1px solid var(--gray-5);border-radius:100px;white-space:nowrap" onmouseover="this.style.background='var(--green-light)'" onmouseout="this.style.background=''">EN <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></td>
         </tr>
-        <tr class="doc-row" data-cat="templates" data-status="ativo" data-text="pe-g-007 pe-g-008 template ata reuniao meeting">
+        <tr class="desc-row" style="display:none"><td colspan="5" style="padding:0 0 12px 0"><div style="background:var(--gray-6);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--gray-2);line-height:1.6;border-left:3px solid var(--green-accent)"><span style="display:inline-block;margin-right:1rem"><strong style="font-size:10px;color:var(--green-dark);text-transform:uppercase;letter-spacing:.05em">PE-G-005_PT</strong> — Modelo padrão para elaboração da Grade de Responsabilidades de Documentos (GRD).</span><span style="display:inline-block;margin-right:1rem"><strong style="font-size:10px;color:var(--green-dark);text-transform:uppercase;letter-spacing:.05em">PE-G-006_EN</strong> — Standard template for preparing the Document Responsibility Matrix (DRM).</span></div></td></tr>
+        <tr class="doc-row clickable-row" data-cat="templates" data-status="ativo" data-text="pe-g-007 pe-g-008 template ata reuniao meeting" onclick="toggleDesc(this)" style="cursor:pointer">
           <td class="td-code">PE-G-007_PT<br>PE-G-008_EN</td>
           <td><div class="td-title">Template Ata de Reunião</div></td>
-          <td class="td-rev">0</td><td><div class="lang-row"><span class="lang lang-pt">PT</span><span class="lang lang-en">EN</span></div></td>
+          <td class="td-rev">0</td>
+          <td><div class="lang-row"><span class="lang lang-pt">PT</span><span class="lang lang-en">EN</span></div></td>
           <td><span class="badge badge-active">Ativo</span></td>
           <td><div style="display:flex;flex-direction:column;gap:4px;align-items:flex-end"><a href="https://tecnored365.sharepoint.com/:x:/r/sites/tecnoredfiles/engenharia/_layouts/15/Doc.aspx?sourcedoc=%7B8DE32105-B610-422C-8C35-26F24685A3BA%7D&file=PE-G-007_PT_Template_Ata_de_Reuni%C3%A3o.xlsx&action=default&mobileredirect=true" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:4px 10px;border:1px solid var(--gray-5);border-radius:100px;white-space:nowrap" onmouseover="this.style.background='var(--green-light)'" onmouseout="this.style.background=''">PT <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a><a href="https://tecnored365.sharepoint.com/:x:/r/sites/tecnoredfiles/engenharia/_layouts/15/Doc.aspx?sourcedoc=%7B52D2FCC9-E991-4306-A215-1E5D00615576%7D&file=PE-G-008_EN_Template_Ata_de_Reuni%C3%A3o.xlsx&action=default&mobileredirect=true" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:4px 10px;border:1px solid var(--gray-5);border-radius:100px;white-space:nowrap" onmouseover="this.style.background='var(--green-light)'" onmouseout="this.style.background=''">EN <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></td>
         </tr>
-        <tr class="doc-row" data-cat="templates" data-status="ativo" data-text="pe-g-009 matriz entregaveis normas segmentos negocio">
+        <tr class="desc-row" style="display:none"><td colspan="5" style="padding:0 0 12px 0"><div style="background:var(--gray-6);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--gray-2);line-height:1.6;border-left:3px solid var(--green-accent)"><span style="display:inline-block;margin-right:1rem"><strong style="font-size:10px;color:var(--green-dark);text-transform:uppercase;letter-spacing:.05em">PE-G-007_PT</strong> — Modelo padrão para registro e acompanhamento de reuniões.</span><span style="display:inline-block;margin-right:1rem"><strong style="font-size:10px;color:var(--green-dark);text-transform:uppercase;letter-spacing:.05em">PE-G-008_EN</strong> — Standard template for recording and tracking meeting discussions and actions.</span></div></td></tr>
+        <tr class="doc-row clickable-row" data-cat="templates" data-status="ativo" data-text="pe-g-009 matriz entregaveis normas segmentos negocio" onclick="toggleDesc(this)" style="cursor:pointer">
           <td class="td-code">PE-G-009_PT</td>
           <td><div class="td-title">Matriz de Entregáveis, Normas e Segmentos de Negócio</div></td>
-          <td class="td-rev">0</td><td><div class="lang-row"><span class="lang lang-pt">PT</span></div></td>
+          <td class="td-rev">0</td>
+          <td><div class="lang-row"><span class="lang lang-pt">PT</span></div></td>
           <td><span class="badge badge-active">Ativo</span></td>
           <td><a href="https://tecnored365.sharepoint.com/:x:/r/sites/tecnoredfiles/engenharia/_layouts/15/Doc.aspx?sourcedoc=%7BCA5C821D-92FF-455E-86D9-BCB99C06825F%7D&file=PE-G-009%20_PT_Matriz_de_Entreg%C3%A1veis_Normas_e_Segmentos_de_Neg%C3%B3cio.xlsx&action=default&mobileredirect=true" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:4px 10px;border:1px solid var(--gray-5);border-radius:100px;white-space:nowrap" onmouseover="this.style.background='var(--green-light)'" onmouseout="this.style.background=''">PT <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td>
         </tr>
+        <tr class="desc-row" style="display:none"><td colspan="5" style="padding:0 0 12px 0"><div style="background:var(--gray-6);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--gray-2);line-height:1.6;border-left:3px solid var(--green-accent)"><span style="display:inline-block;margin-right:1rem"><strong style="font-size:10px;color:var(--green-dark);text-transform:uppercase;letter-spacing:.05em">PE-G-009_PT</strong> — Consolida as matrizes de entregáveis FEL, normas por disciplina e segmentos de negócio para consulta e definição dos requisitos aplicáveis aos projetos.</span></div></td></tr>
       </tbody>
     </table>
   </section>
@@ -239,13 +205,15 @@ footer p{font-size:12px;color:var(--gray-3)}footer strong{color:var(--gray-1);fo
     <table class="doc-table">
       <thead><tr><th>Código</th><th>Título</th><th>Rev.</th><th>Idioma</th><th>Status</th><th></th></tr></thead>
       <tbody>
-        <tr class="doc-row" data-cat="manuais" data-status="ativo" data-text="ma-e-001 manual estruturacao gestao planejamento projetos">
+        <tr class="doc-row clickable-row" data-cat="manuais" data-status="ativo" data-text="ma-e-001 manual estruturacao gestao planejamento projetos" onclick="toggleDesc(this)" style="cursor:pointer">
           <td class="td-code">MA-E-001_PT</td>
           <td><div class="td-title">Manual para Estruturação e Gestão do Planejamento em Projetos</div></td>
-          <td class="td-rev">0</td><td><div class="lang-row"><span class="lang lang-pt">PT</span></div></td>
+          <td class="td-rev">0</td>
+          <td><div class="lang-row"><span class="lang lang-pt">PT</span></div></td>
           <td><span class="badge badge-active">Ativo</span></td>
           <td><a href="https://tecnored365.sharepoint.com/sites/tecnoredfiles/engenharia/Documentos%20Compartilhados/Forms/AllItems.aspx?viewid=faddec46%2D381e%2D4caf%2D9fe6%2D83fbb08416e0&ga=1&id=%2Fsites%2Ftecnoredfiles%2Fengenharia%2FDocumentos%20Compartilhados%2F1%2E%20Gest%C3%A3o%20Engenharia%2F3%2E%20Normas%20e%20Governan%C3%A7a%2FQualidade%20Tecnored%20%2D%20Documentos%20Revisados%2FMA%2DE%2D001%5FManual%5FPara%5FEstrutura%C3%A7%C3%A3o%5Fe%5FGest%C3%A3o%5Fdo%5FPlanejamento%5Fem%5FProjetos%20%281%29%2Epdf&parent=%2Fsites%2Ftecnoredfiles%2Fengenharia%2FDocumentos%20Compartilhados%2F1%2E%20Gest%C3%A3o%20Engenharia%2F3%2E%20Normas%20e%20Governan%C3%A7a%2FQualidade%20Tecnored%20%2D%20Documentos%20Revisados" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:4px 10px;border:1px solid var(--gray-5);border-radius:100px;white-space:nowrap" onmouseover="this.style.background='var(--green-light)'" onmouseout="this.style.background=''">PT <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td>
         </tr>
+        <tr class="desc-row" style="display:none"><td colspan="5" style="padding:0 0 12px 0"><div style="background:var(--gray-6);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--gray-2);line-height:1.6;border-left:3px solid var(--green-accent)"><span style="display:inline-block;margin-right:1rem"><strong style="font-size:10px;color:var(--green-dark);text-transform:uppercase;letter-spacing:.05em">MA-E-001_PT</strong> — Orienta a estruturação, acompanhamento e controle do planejamento de projetos da engenharia.</span></div></td></tr>
       </tbody>
     </table>
   </section>
@@ -255,20 +223,24 @@ footer p{font-size:12px;color:var(--gray-3)}footer strong{color:var(--gray-1);fo
     <table class="doc-table">
       <thead><tr><th>Código</th><th>Título</th><th>Rev.</th><th>Idioma</th><th>Status</th><th></th></tr></thead>
       <tbody>
-        <tr class="doc-row" data-cat="guias" data-status="ativo" data-text="gu-e-001 guia visual boas praticas apresentacao">
+        <tr class="doc-row clickable-row" data-cat="guias" data-status="ativo" data-text="gu-e-001 guia visual boas praticas apresentacao" onclick="toggleDesc(this)" style="cursor:pointer">
           <td class="td-code">GU-E-001_PT</td>
           <td><div class="td-title">Guia Visual de Boas Práticas para Apresentação</div></td>
-          <td class="td-rev">0</td><td><div class="lang-row"><span class="lang lang-pt">PT</span></div></td>
+          <td class="td-rev">0</td>
+          <td><div class="lang-row"><span class="lang lang-pt">PT</span></div></td>
           <td><span class="badge badge-active">Ativo</span></td>
           <td><a href="https://tecnored365.sharepoint.com/sites/tecnoredfiles/engenharia/Documentos%20Compartilhados/Forms/AllItems.aspx?viewid=faddec46%2D381e%2D4caf%2D9fe6%2D83fbb08416e0&ga=1&id=%2Fsites%2Ftecnoredfiles%2Fengenharia%2FDocumentos%20Compartilhados%2F1%2E%20Gest%C3%A3o%20Engenharia%2F3%2E%20Normas%20e%20Governan%C3%A7a%2FQualidade%20Tecnored%20%2D%20Documentos%20Revisados%2FGU%2DE%2D001%5FPT%5FGuia%5FVisual%5Fde%5FBoas%5FPr%C3%A1ticas%5Fpara%5FApresenta%C3%A7%C3%A3o%20%281%29%2Epdf&parent=%2Fsites%2Ftecnoredfiles%2Fengenharia%2FDocumentos%20Compartilhados%2F1%2E%20Gest%C3%A3o%20Engenharia%2F3%2E%20Normas%20e%20Governan%C3%A7a%2FQualidade%20Tecnored%20%2D%20Documentos%20Revisados" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:4px 10px;border:1px solid var(--gray-5);border-radius:100px;white-space:nowrap" onmouseover="this.style.background='var(--green-light)'" onmouseout="this.style.background=''">PT <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td>
         </tr>
-        <tr class="doc-row" data-cat="guias" data-status="ativo" data-text="gu-e-002 visual guide best practices presentations">
+        <tr class="desc-row" style="display:none"><td colspan="5" style="padding:0 0 12px 0"><div style="background:var(--gray-6);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--gray-2);line-height:1.6;border-left:3px solid var(--green-accent)"><span style="display:inline-block;margin-right:1rem"><strong style="font-size:10px;color:var(--green-dark);text-transform:uppercase;letter-spacing:.05em">GU-E-001_PT</strong> — Apresenta recomendações visuais e boas práticas para elaboração de apresentações profissionais.</span></div></td></tr>
+        <tr class="doc-row clickable-row" data-cat="guias" data-status="ativo" data-text="gu-e-002 visual guide best practices presentations" onclick="toggleDesc(this)" style="cursor:pointer">
           <td class="td-code">GU-E-002_EN</td>
           <td><div class="td-title">Visual Guide to Best Practices for Presentations</div></td>
-          <td class="td-rev">0</td><td><div class="lang-row"><span class="lang lang-en">EN</span></div></td>
+          <td class="td-rev">0</td>
+          <td><div class="lang-row"><span class="lang lang-en">EN</span></div></td>
           <td><span class="badge badge-active">Ativo</span></td>
           <td><a href="https://tecnored365.sharepoint.com/sites/tecnoredfiles/engenharia/Documentos%20Compartilhados/Forms/AllItems.aspx?viewid=faddec46%2D381e%2D4caf%2D9fe6%2D83fbb08416e0&ga=1&id=%2Fsites%2Ftecnoredfiles%2Fengenharia%2FDocumentos%20Compartilhados%2F1%2E%20Gest%C3%A3o%20Engenharia%2F3%2E%20Normas%20e%20Governan%C3%A7a%2FQualidade%20Tecnored%20%2D%20Documentos%20Revisados%2FGU%2DE%2D002%5FEN%5FVisual%5FGuide%5FTo%5FBest%5FPractices%5FFor%5FPresentations%20%281%29%2Epdf&parent=%2Fsites%2Ftecnoredfiles%2Fengenharia%2FDocumentos%20Compartilhados%2F1%2E%20Gest%C3%A3o%20Engenharia%2F3%2E%20Normas%20e%20Governan%C3%A7a%2FQualidade%20Tecnored%20%2D%20Documentos%20Revisados" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:4px 10px;border:1px solid var(--gray-5);border-radius:100px;white-space:nowrap" onmouseover="this.style.background='var(--green-light)'" onmouseout="this.style.background=''">EN <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td>
         </tr>
+        <tr class="desc-row" style="display:none"><td colspan="5" style="padding:0 0 12px 0"><div style="background:var(--gray-6);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--gray-2);line-height:1.6;border-left:3px solid var(--green-accent)"><span style="display:inline-block;margin-right:1rem"><strong style="font-size:10px;color:var(--green-dark);text-transform:uppercase;letter-spacing:.05em">GU-E-002_EN</strong> — Provides visual guidelines and best practices for developing professional presentations.</span></div></td></tr>
       </tbody>
     </table>
   </section>
@@ -277,12 +249,7 @@ footer p{font-size:12px;color:var(--gray-3)}footer strong{color:var(--gray-1);fo
     <div>
       <h2>Pesquisa de Satisfação</h2>
       <p>Avalie os documentos disponibilizados e contribua com a melhoria contínua do SGPT. Leva menos de 2 minutos!</p>
-      <div style="margin-top:1.5rem">
-        <a href="https://forms.microsoft.com/Pages/ResponsePage.aspx?id=oUGAFot1a0ywub4wMpGf937Wfk_bjW5Ptq0jPtHHe7xUMjVIOUFZU1dCSzZXRFQ2STFaV0wzRUtSWC4u" target="_blank" class="btn">
-          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-          Responder formulário
-        </a>
-      </div>
+      <div style="margin-top:1.5rem"><a href="https://forms.microsoft.com/Pages/ResponsePage.aspx?id=oUGAFot1a0ywub4wMpGf937Wfk_bjW5Ptq0jPtHHe7xUMjVIOUFZU1dCSzZXRFQ2STFaV0wzRUtSWC4u" target="_blank" class="btn"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Responder formulário</a></div>
     </div>
     <div class="survey-feats">
       <div class="survey-feat"><div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><span class="feat-label">Avalie os documentos</span></div>
@@ -294,7 +261,7 @@ footer p{font-size:12px;color:var(--gray-3)}footer strong{color:var(--gray-1);fo
 
 <footer>
   <p><strong>TECNORED</strong> · Gestão de Qualidade — SGPT</p>
-  <p>Lista Mestra · 16/06/26 · 26 documentos</p>
+  <p>Lista Mestra · 22/06/26 · 26 documentos</p>
 </footer>
 
 <script>
@@ -310,22 +277,32 @@ function filterDocs() {
   const rows = document.querySelectorAll('tr.doc-row');
   let visible = 0;
   rows.forEach(row => {
-    const cat = row.dataset.cat;
-    const status = row.dataset.status;
+    const cat = row.dataset.cat, status = row.dataset.status;
     const text = (row.dataset.text + ' ' + row.innerText).toLowerCase();
-    const catMatch = activeFilter === 'todos' || activeFilter === cat ||
-      (activeFilter === 'ativo' && status === 'ativo');
+    const catMatch = activeFilter === 'todos' || activeFilter === cat || (activeFilter === 'ativo' && status === 'ativo');
     const textMatch = !q || text.includes(q);
-    if (catMatch && textMatch) { row.classList.remove('hidden'); visible++; }
-    else { row.classList.add('hidden'); }
+    const show = catMatch && textMatch;
+    row.classList.toggle('hidden', !show);
+    const next = row.nextElementSibling;
+    if (next && next.classList.contains('desc-row')) {
+      if (!show) { next.style.display = 'none'; next.classList.add('hidden'); }
+      else { next.classList.remove('hidden'); }
+    }
+    if (show) visible++;
   });
   document.querySelectorAll('.section[data-cat]').forEach(sec => {
-    const hasVisible = sec.querySelectorAll('tr.doc-row:not(.hidden)').length > 0;
-    sec.classList.toggle('hidden', !hasVisible);
+    sec.classList.toggle('hidden', sec.querySelectorAll('tr.doc-row:not(.hidden)').length === 0);
   });
-  const counts = {'todos': 26, 'ativo': 26, 'procedimentos': 8, 'templates': 15, 'manuais': 1, 'guias': 2};
-  document.getElementById('resultsNum').textContent = counts[activeFilter] !== undefined ? counts[activeFilter] : visible;
+  const counts = {'todos':26,'ativo':26,'procedimentos':8,'templates':15,'manuais':1,'guias':2};
+  document.getElementById('resultsNum').textContent = (!q && counts[activeFilter] !== undefined) ? counts[activeFilter] : visible;
   document.getElementById('emptyState').classList.toggle('visible', visible === 0);
+}
+function toggleDesc(row) {
+  const next = row.nextElementSibling;
+  if (!next || !next.classList.contains('desc-row')) return;
+  const isOpen = next.style.display === 'table-row';
+  next.style.display = isOpen ? 'none' : 'table-row';
+  row.classList.toggle('open', !isOpen);
 }
 </script>
 </body>
