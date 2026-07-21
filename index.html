@@ -44,7 +44,7 @@ footer{border-top:1px solid var(--gray-5);padding:2rem 2.5rem;max-width:1100px;m
 <body>
 <nav>
   <div class="nav-left"><a class="nav-brand" href="#">TECNORED</a><div class="nav-sep"></div><span class="nav-sub">Gestão de Qualidade — SGPT</span></div>
-  <div class="nav-links"><a href="#sec-procedimentos">Procedimentos</a><a href="#sec-templates">Templates</a><a href="#sec-manuais">Manuais</a><a href="#sec-guias">Guias</a><a href="#avaliacao">Avaliação</a></div>
+  <div class="nav-links"><a href="#sec-procedimentos">Procedimentos</a><a href="#sec-templates">Templates</a><a href="#sec-manuais">Manuais</a><a href="#sec-guias">Guias</a><a href="#sec-timbrados">Timbrados</a><a href="#avaliacao">Avaliação</a></div>
 </nav>
 
 <section class="hero">
@@ -60,13 +60,14 @@ footer{border-top:1px solid var(--gray-5);padding:2rem 2.5rem;max-width:1100px;m
       <button class="chip" onclick="setFilter('templates',this)">Templates</button>
       <button class="chip" onclick="setFilter('manuais',this)">Manuais</button>
       <button class="chip" onclick="setFilter('guias',this)">Guias</button>
+      <button class="chip" onclick="setFilter('timbrados',this)">Timbrados</button>
       <button class="chip" onclick="setFilter('ativo',this)">Ativos</button>
     </div>
   </div>
 </section>
 
 <div class="results-bar">
-  <span class="results-count"><span id="resultsNum">26</span> documentos encontrados</span>
+  <span class="results-count"><span id="resultsNum">30</span> documentos encontrados</span>
   <span class="hint">Clique em uma linha para ver a descrição</span>
   <a href="https://tecnored365.sharepoint.com/:x:/r/sites/tecnoredfiles/engenharia/_layouts/15/Doc.aspx?sourcedoc=%7B134EFC72-999A-408D-8682-720B6730021A%7D&file=Lista_De_Documentos_SGPT.xls&action=default&mobileredirect=true" target="_blank" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:6px 14px;border:1px solid var(--green-accent);border-radius:100px;background:var(--green-light);transition:opacity .15s" onmouseover="this.style.opacity='.75'" onmouseout="this.style.opacity='1'"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Ver Lista Mestra completa</a>
 </div>
@@ -109,10 +110,10 @@ footer{border-top:1px solid var(--gray-5);padding:2rem 2.5rem;max-width:1100px;m
         <tr class="doc-row clickable-row" data-cat="procedimentos" data-status="ativo" data-text="pr-e-007 pr-e-008 apresentacoes powerpoint presentation development" onclick="toggleDesc(this)" style="cursor:pointer">
           <td class="td-code">PR-E-007_PT<br>PR-E-008_EN</td>
           <td><div class="td-title">Elaboração de Apresentações Power Point</div><div class="td-sub">PowerPoint Presentation Development</div></td>
-          <td class="td-rev">0</td>
+          <td class="td-rev">1</td>
           <td><div class="lang-row"><span class="lang lang-pt">PT</span><span class="lang lang-en">EN</span></div></td>
           <td><span class="badge badge-active">Ativo</span></td>
-          <td><div style="display:flex;flex-direction:column;gap:4px;align-items:flex-start"><a href="https://tecnored365.sharepoint.com/:w:/s/tecnoredfiles/engenharia/IQB6PCQrCd1fTatfehciQ285AdCIcu_ECnep2L4pEHYNBPc?e=leheRN" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:4px 10px;border:1px solid var(--gray-5);border-radius:100px;white-space:nowrap" onmouseover="this.style.background='var(--green-light)'" onmouseout="this.style.background=''">PT <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a><a href="https://tecnored365.sharepoint.com/:w:/s/tecnoredfiles/engenharia/IQCz0W5hSXP6QI7I4seVUHFYASSGIl3Z6VlEhmdQNAito9M?e=CROD48" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:4px 10px;border:1px solid var(--gray-5);border-radius:100px;white-space:nowrap" onmouseover="this.style.background='var(--green-light)'" onmouseout="this.style.background=''">EN <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></td>
+          <td><div style="display:flex;flex-direction:column;gap:4px;align-items:flex-start"><a href="https://tecnored365.sharepoint.com/:w:/s/tecnoredfiles/engenharia/IQBZzpadGoQySY_umEZU706fAbztkyNclkU3hhDR7FqS6hU?e=cnXHHy" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:4px 10px;border:1px solid var(--gray-5);border-radius:100px;white-space:nowrap" onmouseover="this.style.background='var(--green-light)'" onmouseout="this.style.background=''">PT <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a><a href="https://tecnored365.sharepoint.com/:w:/s/tecnoredfiles/engenharia/IQAV5eUCSxoiTpB7EK7XtWZkAZ1H3C2799tEAtwTaKCyxzw?e=5IFYvf" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:4px 10px;border:1px solid var(--gray-5);border-radius:100px;white-space:nowrap" onmouseover="this.style.background='var(--green-light)'" onmouseout="this.style.background=''">EN <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></td>
         </tr>
         <tr class="desc-row" style="display:none"><td colspan="5" style="padding:0 0 12px 0"><div style="background:var(--gray-6);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--gray-2);line-height:1.6;border-left:3px solid var(--green-accent)"><span style="display:inline-block;margin-right:1rem"><strong style="font-size:10px;color:var(--green-dark);text-transform:uppercase;letter-spacing:.05em">PR-E-007_PT</strong> — Estabelece diretrizes para criação e padronização de apresentações corporativas em PowerPoint.</span><span style="display:inline-block;margin-right:1rem"><strong style="font-size:10px;color:var(--green-dark);text-transform:uppercase;letter-spacing:.05em">PR-E-008_EN</strong> — Establishes guidelines for creating and standardizing corporate PowerPoint presentations.</span></div></td></tr>
       </tbody>
@@ -245,6 +246,52 @@ footer{border-top:1px solid var(--gray-5);padding:2rem 2.5rem;max-width:1100px;m
     </table>
   </section>
 
+
+  <section class="section" id="sec-timbrados" data-cat="timbrados">
+    <div class="section-head"><h2>Timbrados</h2><span class="section-meta">TI · 4 documentos</span></div>
+    <table class="doc-table">
+      <thead><tr><th>Código</th><th>Título</th><th>Rev.</th><th>Idioma</th><th>Status</th><th></th></tr></thead>
+      <tbody>
+        <tr class="doc-row clickable-row" data-cat="timbrados" data-status="ativo" data-text="ti-001_pt timbrado oficial tecnored marabá" onclick="toggleDesc(this)" style="cursor:pointer">
+          <td class="td-code">TI-001_PT</td>
+          <td><div class="td-title">Timbrado Oficial Tecnored Marabá</div></td>
+          <td class="td-rev">0</td>
+          <td><div class="lang-row"><span class="lang lang-pt">PT</span></div></td>
+          <td><span class="badge badge-active">Ativo</span></td>
+          <td><a href="https://tecnored365.sharepoint.com/:w:/s/tecnoredfiles/engenharia/IQBoRcuCRjhSQJ0VFfIubDHRAecKP_4tkrqTjGexoHMMF9I?e=mf4sqS" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:4px 10px;border:1px solid var(--gray-5);border-radius:100px;white-space:nowrap" onmouseover="this.style.background='var(--green-light)'" onmouseout="this.style.background=''">PT <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td>
+        </tr>
+        <tr class="desc-row" style="display:none"><td colspan="6"><div style="background:var(--gray-6);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--gray-2);line-height:1.6;border-left:3px solid var(--green-accent)"><span><strong style="font-size:10px;color:var(--green-dark);text-transform:uppercase;letter-spacing:.05em">TI-001_PT</strong> — Modelo de timbrado oficial para documentos da unidade Marabá.</span></div></td></tr>
+        <tr class="doc-row clickable-row" data-cat="timbrados" data-status="ativo" data-text="ti-002_pt timbrado oficial tecnored" onclick="toggleDesc(this)" style="cursor:pointer">
+          <td class="td-code">TI-002_PT</td>
+          <td><div class="td-title">Timbrado Oficial Tecnored</div></td>
+          <td class="td-rev">0</td>
+          <td><div class="lang-row"><span class="lang lang-pt">PT</span></div></td>
+          <td><span class="badge badge-active">Ativo</span></td>
+          <td><a href="https://tecnored365.sharepoint.com/:w:/s/tecnoredfiles/engenharia/IQC09IdUKgPiRa_BWH3IcGNBASI60s0nprtFEKmeqUmwJiI?e=bXlH6J" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:4px 10px;border:1px solid var(--gray-5);border-radius:100px;white-space:nowrap" onmouseover="this.style.background='var(--green-light)'" onmouseout="this.style.background=''">PT <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td>
+        </tr>
+        <tr class="desc-row" style="display:none"><td colspan="6"><div style="background:var(--gray-6);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--gray-2);line-height:1.6;border-left:3px solid var(--green-accent)"><span><strong style="font-size:10px;color:var(--green-dark);text-transform:uppercase;letter-spacing:.05em">TI-002_PT</strong> — Modelo de timbrado oficial padrão da Tecnored.</span></div></td></tr>
+        <tr class="doc-row clickable-row" data-cat="timbrados" data-status="ativo" data-text="ti-003_pt timbrado oficial tecnored — documentos grandes" onclick="toggleDesc(this)" style="cursor:pointer">
+          <td class="td-code">TI-003_PT</td>
+          <td><div class="td-title">Timbrado Oficial Tecnored — Documentos Grandes</div></td>
+          <td class="td-rev">0</td>
+          <td><div class="lang-row"><span class="lang lang-pt">PT</span></div></td>
+          <td><span class="badge badge-active">Ativo</span></td>
+          <td><a href="https://tecnored365.sharepoint.com/:w:/s/tecnoredfiles/engenharia/IQBeHzSTNajNRanAoyIvns9IARxVsDjrwImyqFWdfvBSCo8?e=qdn7RC" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:4px 10px;border:1px solid var(--gray-5);border-radius:100px;white-space:nowrap" onmouseover="this.style.background='var(--green-light)'" onmouseout="this.style.background=''">PT <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td>
+        </tr>
+        <tr class="desc-row" style="display:none"><td colspan="6"><div style="background:var(--gray-6);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--gray-2);line-height:1.6;border-left:3px solid var(--green-accent)"><span><strong style="font-size:10px;color:var(--green-dark);text-transform:uppercase;letter-spacing:.05em">TI-003_PT</strong> — Modelo de timbrado oficial para documentos de grande formato.</span></div></td></tr>
+        <tr class="doc-row clickable-row" data-cat="timbrados" data-status="ativo" data-text="ti-004_pt timbrado oficial tecpar" onclick="toggleDesc(this)" style="cursor:pointer">
+          <td class="td-code">TI-004_PT</td>
+          <td><div class="td-title">Timbrado Oficial Tecpar</div></td>
+          <td class="td-rev">0</td>
+          <td><div class="lang-row"><span class="lang lang-pt">PT</span></div></td>
+          <td><span class="badge badge-active">Ativo</span></td>
+          <td><a href="https://tecnored365.sharepoint.com/:w:/s/tecnoredfiles/engenharia/IQAZUeWzqur4RrNNR0ZcVB6IAS7c7qtsTfllUxc6tI5-hIw?e=8eNkia" target="_blank" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green-dark);text-decoration:none;padding:4px 10px;border:1px solid var(--gray-5);border-radius:100px;white-space:nowrap" onmouseover="this.style.background='var(--green-light)'" onmouseout="this.style.background=''">PT <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td>
+        </tr>
+        <tr class="desc-row" style="display:none"><td colspan="6"><div style="background:var(--gray-6);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--gray-2);line-height:1.6;border-left:3px solid var(--green-accent)"><span><strong style="font-size:10px;color:var(--green-dark);text-transform:uppercase;letter-spacing:.05em">TI-004_PT</strong> — Modelo de timbrado oficial da Tecpar.</span></div></td></tr>
+      </tbody>
+    </table>
+  </section>
+
   <section class="survey" id="avaliacao">
     <div>
       <h2>Pesquisa de Satisfação</h2>
@@ -261,7 +308,7 @@ footer{border-top:1px solid var(--gray-5);padding:2rem 2.5rem;max-width:1100px;m
 
 <footer>
   <p><strong>TECNORED</strong> · Gestão de Qualidade — SGPT</p>
-  <p>Lista Mestra · 22/06/26 · 26 documentos</p>
+  <p>Lista Mestra · 14/07/26 · 30 documentos</p>
 </footer>
 
 <script>
@@ -293,7 +340,7 @@ function filterDocs() {
   document.querySelectorAll('.section[data-cat]').forEach(sec => {
     sec.classList.toggle('hidden', sec.querySelectorAll('tr.doc-row:not(.hidden)').length === 0);
   });
-  const counts = {'todos':26,'ativo':26,'procedimentos':8,'templates':15,'manuais':1,'guias':2};
+  const counts = {'todos':30,'ativo':30,'procedimentos':8,'templates':15,'manuais':1,'guias':2,'timbrados':4};
   document.getElementById('resultsNum').textContent = (!q && counts[activeFilter] !== undefined) ? counts[activeFilter] : visible;
   document.getElementById('emptyState').classList.toggle('visible', visible === 0);
 }
@@ -307,3 +354,13 @@ function toggleDesc(row) {
 </script>
 </body>
 </html>
+
+
+
+
+
+     
+    
+   
+ 
+
